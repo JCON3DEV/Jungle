@@ -63,6 +63,9 @@ main section.categories-show {
     }
   }
 }
+.price::before {
+        content: "$";
+      }
 
 main section.products-show {
 
