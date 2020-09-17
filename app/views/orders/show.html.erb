@@ -11,8 +11,10 @@
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
   <% @order.line_items.each do |item| %>
-    <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
-    <%puts item.product%>
+    <%= render 'item', product: item.product, quantity: item.quantity.to_i%>
+    
+    # <%# raise @order.inspect %>
+    # why can i not write order.email ?
   <% end %>
 
 </section>
