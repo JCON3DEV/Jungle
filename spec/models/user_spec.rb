@@ -13,15 +13,25 @@ RSpec.describe User, type: :model do
       expect(@user.save).to be(false)
     end
 
-    it "a new user instance requires password and confirmation field" do
-      @user = User.new(first_name: "Bert", last_name: "Reynolds", password: "123")
+    it "a new user instance requires password field" do
+      @user = User.new(first_name: "Bert", last_name: "Reynolds", email: "madeup@gmail.com", password: "123")
       expect(@user.save).to be(false)
     end
 
-    # it "is not valid if password or password confirmation are nil" do
-    #   @user = User.new(first_name: "Bert", last_name: "Reynolds", password: "123", password_confirmation: nil)
-    #   expect(@user.save).to be(false)
-    # end
+    it "a new user instance requires confirmation field" do
+      @user = User.new(first_name: "Bert", last_name: "Reynolds", email: "madeup@gmail.com", password: "123")
+      expect(@user.save).to be(false)
+    end
+
+    it "is not valid if password or password confirmation are nil" do
+      @user = User.new(first_name: "Bert", last_name: "Reynolds", email: "madeup@gmail.com", password: nil, password_confirmation: nil)
+      expect(@user.save).to be(false)
+    end
+
+    it "is not valid if password is shorter than 3 characters" do
+      @user = User.new(first_name: "Bert", last_name: "Reynolds", email: "madeup@gmail.com", password: "123", password_confirmation: "123")
+      expect(@user.password.length).to be_between(3,20).inclusive
+    end
     
   
   end

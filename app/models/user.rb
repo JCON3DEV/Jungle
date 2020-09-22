@@ -8,9 +8,15 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :password_confirmation, presence: true
   validates :password, length: 3..20
+  validates :email, uniqueness: { case_sensitive: false }
 
   def name
     "#{self.first_name} #{self.last_name}"
   end
+
+  def authenticate_with_credentials(params[:email], params[:password])
+    @user = User.new
+  end
+
 
 end
