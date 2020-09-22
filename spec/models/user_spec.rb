@@ -41,5 +41,13 @@ RSpec.describe User, type: :model do
     end
 
   end
+  
+  describe '.authenticate_with_credentials' do
+    it "should ignore whitespace around the email when registering a user" do
+      @user = User.new(first_name: "Bert", last_name: "Reynolds", email: "  madeup@gmail.com  ", password: "123", password_confirmation: "123")
+      expect(@user.save).to be(true) 
+    end
+
+  end
 
 end

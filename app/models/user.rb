@@ -14,9 +14,9 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
-  # def authenticate_with_credentials(params[:email], params[:password])
-  #   @user = User.new
-  # end
+  def self.authenticate_with_credentials
+    @user = User.new.find_by_email(params[:email]).authenticate(params[:password])
+  end
 
 
 end
