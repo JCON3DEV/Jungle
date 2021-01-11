@@ -1,6 +1,23 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of learning Rails and simulating a workplace scenario of inheriting a legacy codebase that uses older versions of its frameworks.
+
+## Tech Stack
+### Front End:
+
+* ERB (Embedded Ruby)
+
+### Back End:
+
+* Ruby on Rails
+* PostgreSQL
+
+### Testing:
+
+* RSpec
+* Capybara
+* Poltergeist
+Created in Weeks 9 and 10 of Lighthouse Labs Web Development Bootcamp.
 
 
 ## Setup
