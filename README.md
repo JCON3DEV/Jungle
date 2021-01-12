@@ -16,7 +16,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of learning Rail
 
 * RSpec
 * Capybara
-* Poltergeist
+
 Created in Weeks 9 and 10 of Lighthouse Labs Web Development Bootcamp.
 
 
